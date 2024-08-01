@@ -8,8 +8,6 @@ myLibrary.push(book1);
 myLibrary.push(book2);
 myLibrary.push(book3);
 
-// const latestBook = myLibrary.forEach();
-console.log(myLibrary);
 
 function Book(title, author, page, read) {
   this.title = title;
@@ -18,10 +16,37 @@ function Book(title, author, page, read) {
   this.read = read;
 }
 
-Book.prototype.displayCardSample = function () {
-	console.log(myLibrary.map);
-};
-// displayCardSample();
+const latestBook = myLibrary.forEach((latestBook, index) => {
+	const mainContainer = document.querySelector('.main-section');
+	
+	const bookCardDiv = document.createElement('div');
+	bookCardDiv.classList.add('book-card');
+	
+	const bookTitle = document.createElement('h5');
+	bookTitle.textContent = `title: ${latestBook.title}`;
+	
+	const bookAuthor = document.createElement('h5');
+	bookAuthor.textContent = `author: ${latestBook.author}`;
+	
+	const bookPages = document.createElement('h5');
+	bookPages.textContent = `pages: ${latestBook.page}`;
+	
+	const bookRead = document.createElement('h5');
+	bookRead.textContent = `read: ${latestBook.read?"read allready":"not yet"}`;
+	
+	mainContainer.appendChild(bookCardDiv);
+	bookCardDiv.appendChild(bookTitle);
+	bookCardDiv.appendChild(bookAuthor);
+	bookCardDiv.appendChild(bookPages);
+	bookCardDiv.appendChild(bookRead);
+
+	const removeBtn = document.createElement('button');
+	removeBtn.textContent = "remove book";
+	removeBtn.classList.add('remobe-btn');
+	
+	bookCardDiv.appendChild(removeBtn);
+});
+	
 Book.prototype.displayCard = function () {
 	const mainContainer = document.querySelector('.main-section');
 	
@@ -45,6 +70,12 @@ Book.prototype.displayCard = function () {
 	bookCardDiv.appendChild(bookAuthor);
 	bookCardDiv.appendChild(bookPages);
 	bookCardDiv.appendChild(bookRead);
+
+	const removeBtn = document.createElement('button');
+	removeBtn.textContent = "remove book";
+	removeBtn.classList.add('remobe-btn');
+	
+	bookCardDiv.appendChild(removeBtn);
 };
 
 const addBookToLibrary = function (e) {
