@@ -27,6 +27,24 @@ header h1 {
 
 .main-section {
 	background-color: #e4e5eb;
+	padding: 50px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr;
+	gap: 20px;
+}
+
+.main-section .book-card {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	background-color: white;
+	padding: 20px;
+	height: 200px;
+	width: 200px;
+	border-radius: 20px;
+	line-height: 2;
 }
 
 .side-section {
