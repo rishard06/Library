@@ -39,13 +39,19 @@ const latestBook = myLibrary.forEach((latestBook, index) => {
 	bookCardDiv.appendChild(bookAuthor);
 	bookCardDiv.appendChild(bookPages);
 	bookCardDiv.appendChild(bookRead);
-
+	
 	const removeBtn = document.createElement('button');
 	removeBtn.textContent = "remove book";
-	removeBtn.classList.add('remobe-btn');
+	removeBtn.classList.add('remove-btn');
 	
 	bookCardDiv.appendChild(removeBtn);
+	
+	removeBtn.addEventListener('click', (i) => {
+		console.log(myLibrary[index], i.target);
+		myLibrary.splice(index, 1);
+	});
 });
+	// const removeBtn = document.querySelector('.remove-btn');
 	
 Book.prototype.displayCard = function () {
 	const mainContainer = document.querySelector('.main-section');
@@ -60,7 +66,7 @@ Book.prototype.displayCard = function () {
 	bookAuthor.textContent = `author: ${this.author}`;
 	
 	const bookPages = document.createElement('h5');
-	bookPages.textContent = `pages: ${this.pages}`;
+	bookPages.textContent = `pages: ${this.page}`;
 	
 	const bookRead = document.createElement('h5');
 	bookRead.textContent = `read: ${this.read}`;
@@ -73,9 +79,16 @@ Book.prototype.displayCard = function () {
 
 	const removeBtn = document.createElement('button');
 	removeBtn.textContent = "remove book";
-	removeBtn.classList.add('remobe-btn');
+	removeBtn.classList.add('remove-btn');
 	
 	bookCardDiv.appendChild(removeBtn);
+	
+	removeBtn.addEventListener('click', (i) => {
+		if(myLibrary[index] === i.target) {
+			// console.log("jello");
+		}
+		// myLibrary.map.splice(index, 1);
+	});
 };
 
 const addBookToLibrary = function (e) {

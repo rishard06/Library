@@ -47,6 +47,16 @@ header h1 {
 	line-height: 2;
 }
 
+.book-card .remove-btn {
+	border: none;
+	height: 1.3rem;
+	width: 100px;
+	border-radius: 5px;
+	color: white;
+	background-color: #fc5446;
+	align-content: center;
+}
+
 .side-section {
 	grid-row: 2 / 3;
 	grid-column: 1 / 2;
