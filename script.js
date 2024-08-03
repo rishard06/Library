@@ -49,13 +49,13 @@ Book.prototype.displayCard = function () {
 	
 	bookCardDiv.appendChild(removeBtn);
 	
-	const latestBook = myLibrary[myLibrary.length - 1]
-
+	const latestBook = myLibrary.findIndex((x) => x.title === this.title)
+	
 	removeBtn.addEventListener('click', () => {
-		if(latestBook.title) {
-			myLibrary.splice(myLibrary.length - 1, 1);
+		if(latestBook) {
+			myLibrary.splice(latestBook, 1);
 			bookCardDiv.remove();
-			console.log(latestBook.title)
+			console.log(latestBook);
 		}
 	});
 };
