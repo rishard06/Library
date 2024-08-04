@@ -53,9 +53,9 @@ Book.prototype.displayCard = function () {
 	
 	removeBtn.addEventListener('click', () => {
 		if(latestBook) {
+			console.log(this.title, latestBook);
 			myLibrary.splice(latestBook, 1);
 			bookCardDiv.remove();
-			console.log(latestBook);
 		}
 	});
 };
