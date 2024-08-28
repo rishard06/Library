@@ -33,7 +33,7 @@ class Book{
 			let pages = document.querySelector('#pages');
 			let read = document.querySelector('#read');
 			
-			const myBook = new Book(title.value, author.value, pages.value, read.value);
+			const myBook = new Book(title.value, author.value, pages.value, read.checked);
 			library.addBook(myBook);
 			
 			// document.querySelector('#input-form')
